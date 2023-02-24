@@ -19,6 +19,10 @@ export class AddParcelComponent {
   onSubmit() {
     if(this.form?.invalid){
       this.errorMessage = 'Please fill all the fields';
+      setTimeout(() => {
+        this.errorMessage = '';
+      }, 3000);
+      
       return;
     }
     const parcel = new ParcelModel(this.form?.value.name,this.form?.value.email,this.form?.value.destination);
