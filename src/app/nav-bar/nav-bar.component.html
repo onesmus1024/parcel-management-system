@@ -1,0 +1,12 @@
+<nav>
+ <div class="links">
+    <a routerLink="" routerLinkActive="active">Home</a>
+    <a routerLink="/parcel/addparcel" routerLinkActive="active">Add Parcel</a>
+ </div>
+
+ <div class="login">
+    <button *ngIf="!isloggedIn" (click)="login()">Login</button>
+    <button *ngIf="isloggedIn" (click)="logout()">Logout</button>
+ </div>
+    
+</nav>

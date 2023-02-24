@@ -1,0 +1,38 @@
+
+
+<!-- name :   string ; 
+email :   string ;
+destination :   string ; -->
+<div class="form-group">
+    <h1>Add parcel</h1>
+    <form #addParcelForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="input-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" ngModel placeholder="Name" required #name="ngModel">
+            <span *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+                <span *ngIf="name.errors">Name is required.</span>
+            </span>
+        </div>
+
+        <div class="input-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" name="email" ngModel placeholder="Email" required #email="ngModel" pattern="^[a-zA-Z0-9._%+-]+@travel\.com$">
+            <span *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+                <span *ngIf="email.errors">Email is required.</span>
+                <span *ngIf="email.errors">Email must be in the format: travel.com</span>
+            </span>
+            
+        </div>
+
+        <div class="input-group">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" id="destination" name="destination" ngModel placeholder="Destination" required #destination="ngModel">
+            <span *ngIf="destination.invalid && (destination.dirty || destination.touched)" class="error">
+                <span *ngIf="destination.errors">Destination is required.</span>
+            </span>
+        </div>
+
+        <button type="submit"  >Submit</button>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+
+
+.single-parcel{
+    margin: 0 auto;
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+    margin-top: 20px;
+}
+
+.single-parcel h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.single-parcel  .parcel-details{
+    display: flex;
+    justify-content: space-between;
+}
+
+.single-parcel  .parcel-details .parcel-detail{
+    width: 45%;
+}
+
+.single-parcel  .parcel-details .parcel-detail .parcel-detail-label{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
