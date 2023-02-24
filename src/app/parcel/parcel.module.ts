@@ -9,7 +9,7 @@ import { CanActivateGuardService } from '../shared/guards/can-activate-guard.ser
 
 // create routes
 const routes: Routes = [
-  { path: '', component: AllParcelsComponent },
+  { path: '', component: AllParcelsComponent, canActivate: [CanActivateGuardService] },
   { path: 'addparcel', component: AddParcelComponent, canActivate: [CanActivateGuardService] },
 ];
 
