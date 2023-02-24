@@ -7,6 +7,8 @@ destination :   string ; -->
     <h1>Add parcel</h1>
     <form #addParcelForm="ngForm" (ngSubmit)="onSubmit()">
 
+        <span class="error" *ngIf="errorMessage">{{errorMessage}}</span>
+
         <div class="input-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" id="name" name="name" ngModel placeholder="Name" required #name="ngModel">
@@ -19,7 +21,7 @@ destination :   string ; -->
             <label for="email">Email</label>
             <input type="text" class="form-control" id="email" name="email" ngModel placeholder="Email" required #email="ngModel" pattern="^[a-zA-Z0-9._%+-]+@travel\.com$">
             <span *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
-                <span *ngIf="email.errors">Email is required.</span>
+                <span *ngIf="email.errors">Email is required. <br></span>
                 <span *ngIf="email.errors">Email must be in the format: travel.com</span>
             </span>
             

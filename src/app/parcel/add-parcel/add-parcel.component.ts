@@ -11,12 +11,16 @@ import { ParcelService } from 'src/app/shared/services/parcel.service';
   styleUrls: ['./add-parcel.component.css']
 })
 export class AddParcelComponent {
-  // #addParcelForm
+  errorMessage:string = '';
   @ViewChild('addParcelForm') form: NgForm | undefined;
 
   constructor(private ParcelService:ParcelService,private router:Router) { }
 
   onSubmit() {
+    if(this.form?.invalid){
+      this.errorMessage = 'Please fill all the fields';
+      return;
+    }
     const parcel = new ParcelModel(this.form?.value.name,this.form?.value.email,this.form?.value.destination);
     console.log(parcel);
     this.ParcelService.addParcel(parcel);
