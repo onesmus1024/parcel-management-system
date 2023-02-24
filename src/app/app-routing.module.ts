@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'parcel', pathMatch: 'full' },
-  { path: 'parcel', loadChildren: () => import('./parcel/parcel.module').then(m => m.ParcelModule) }
+  { path: 'parcel', loadChildren: () => import('./parcel/parcel.module').then(m => m.ParcelModule) },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
